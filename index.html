@@ -33,15 +33,16 @@
     locationService.getWeatherAverage("Brussels").then(weatherData => {
         weatherData.forEach(weather => {
             const index = weatherData.indexOf(weather);
-
-            document.getElementById("temp-" + (index + 1)).innerText = weatherData[index].temp;
+            document.getElementById("temp-" + (index + 1)).innerText =
+                weatherData[index].temp;
             document.getElementById("pressure-" + (index + 1)).innerText =
                 weatherData[index].pressure;
-            document.getElementById("temp-min-" + (index+ 1)).innerText =
+            document.getElementById("temp-min-" + (index + 1)).innerText =
                 weatherData[index].temp_min;
-            document.getElementById("temp-max-" +(index+ 1)).innerText =
+            document.getElementById("temp-max-" + (index + 1)).innerText =
                 weatherData[index].temp_max;
-            document.getElementById("temp-avg-"+ (index+ 1)).innerText = weatherData[index].avg;
+            document.getElementById("temp-avg-" + (index + 1)).innerText =
+                weatherData[index].avg;
         });
     });
 </script>
@@ -118,10 +119,10 @@
                 </div>
 
                 <div class="content">
-                    Pressure - <span id="pressure-4"></span> <br/>
-                    Temp min - <span id="temp-min-4"></span><br/>
-                    Temp max - <span id="temp-max-4"></span><br/>
-                    <hr/>
+                    Pressure - <span id="pressure-4"></span> <br />
+                    Temp min - <span id="temp-min-4"></span><br />
+                    Temp max - <span id="temp-max-4"></span><br />
+                    <hr />
                     Temp Avg - <span id="temp-avg-4"></span>
                 </div>
             </div>
@@ -138,10 +139,10 @@
                 </div>
 
                 <div class="content">
-                    Pressure - <span id="pressure-5"></span> <br/>
-                    Temp min - <span id="temp-min-5"></span><br/>
-                    Temp max - <span id="temp-max-5"></span><br/>
-                    <hr/>
+                    Pressure - <span id="pressure-5"></span> <br />
+                    Temp min - <span id="temp-min-5"></span><br />
+                    Temp max - <span id="temp-max-5"></span><br />
+                    <hr />
                     Temp Avg - <span id="temp-avg-5"></span>
                 </div>
             </div>
