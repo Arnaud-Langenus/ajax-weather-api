@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Hello!</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <script
+            defer
+            src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js"></script>
+</head>
+<body>
+<h1>Weather API Arnaud Langenus</h1>
+
+<script>
+    const locationService = new LocationService();
+    //locationService.getWeather("Brussels").then( data => {
+    //console.log(data);
+
+    // });
+    locationService.getWeatherAverage("Brussels").then(weatherData => {
+        weatherData.forEach(weather => {
+            const index = weatherData.indexOf(weather);
+
+            document.getElementById("temp-" + (index + 1)).innerText = weatherData[index].temp;
+            document.getElementById("pressure-" + (index + 1)).innerText =
+                weatherData[index].pressure;
+            document.getElementById("temp-min-" + (index+ 1)).innerText =
+                weatherData[index].temp_min;
+            document.getElementById("temp-max-" +(index+ 1)).innerText =
+                weatherData[index].temp_max;
+            document.getElementById("temp-avg-"+ (index+ 1)).innerText = weatherData[index].avg;
+        });
+    });
+</script>
+
+<div class="columns">
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">First Day</p>
+                        <p class="subtitle is-6" id="temp-1"></p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    Pressure - <span id="pressure-1"></span> <br />
+                    Temp min - <span id="temp-min-1"></span><br />
+                    Temp max - <span id="temp-max-1"></span><br />
+                    <hr />
+                    Temp Avg - <span id="temp-avg-1"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Second Day</p>
+                        <p class="subtitle is-6" id="temp-2"></p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    Pressure - <span id="pressure-2"></span> <br />
+                    Temp min - <span id="temp-min-2"></span><br />
+                    Temp max - <span id="temp-max-2"></span><br />
+                    <hr />
+                    Temp Avg - <span id="temp-avg-2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Thirth Day</p>
+                        <p class="subtitle is-6" id="temp-3"></p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    Pressure - <span id="pressure-3"></span> <br />
+                    Temp min - <span id="temp-min-3"></span><br />
+                    Temp max - <span id="temp-max-3"></span><br />
+                    <hr />
+                    Temp Avg - <span id="temp-avg-3"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Fourth Day</p>
+                        <p class="subtitle is-6" id="temp-4"></p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    Pressure - <span id="pressure-4"></span> <br/>
+                    Temp min - <span id="temp-min-4"></span><br/>
+                    Temp max - <span id="temp-max-4"></span><br/>
+                    <hr/>
+                    Temp Avg - <span id="temp-avg-4"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="column">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                    <div class="media-content">
+                        <p class="title is-4">Fifth Day</p>
+                        <p class="subtitle is-6" id="temp-5"></p>
+                    </div>
+                </div>
+
+                <div class="content">
+                    Pressure - <span id="pressure-5"></span> <br/>
+                    Temp min - <span id="temp-min-5"></span><br/>
+                    Temp max - <span id="temp-max-5"></span><br/>
+                    <hr/>
+                    Temp Avg - <span id="temp-avg-5"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
